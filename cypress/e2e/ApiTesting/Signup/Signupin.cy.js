@@ -4,7 +4,7 @@
 describe('Profile API', () => {
   let userPin;
   let auth_Token;
-  const edenURL = 'https://8a94-2400-adc5-112-4b00-3e6f-52c8-2e52-58e3.ngrok-free.app/api/v1';
+  const edenURL = 'https://bluepalm.xyz/api/v1';
     it('POST user SignUp', () => {
       cy.request({
         method: 'POST',
@@ -35,7 +35,8 @@ describe('Profile API', () => {
         url: `${edenURL}/sessions`, 
         body: {
           phone: "+19876543210",
-          pin: userPin 
+          //pin: userPin 
+          pin: "0000"
         }
       }).then((response) => {
         expect(response.status).to.eq(201);
